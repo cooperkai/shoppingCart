@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: shoppingCart
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: T3065
+Implementation-Vendor-Id: com.cooper
+Build-Jdk: 1.8.0_151
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/shoppingCart
+Created-By: Maven Integration for Eclipse
+
