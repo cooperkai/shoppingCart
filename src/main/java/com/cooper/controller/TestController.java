@@ -1,9 +1,12 @@
 package com.cooper.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.cooper.serivce.ExcelService;
 import com.cooper.serivce.MailService;
+import com.cooper.util.MessageKey;
 
 import java.security.Principal;
 import java.util.Set;
@@ -22,6 +25,8 @@ public class TestController {
 	
 	@Autowired
 	private MailService mailService;
+	@Autowired
+	private ExcelService excelService;
 	
 	@RequestMapping("/test")
 	public ModelAndView greeting(Principal principal) {
@@ -45,5 +50,29 @@ public class TestController {
 			logger.error("{testError}: ", e);
 		}
         return modelAndView;
+	}
+	
+	@GetMapping(value = "/excel")
+	public ModelAndView makeExcel(Principal principal) {
+		ModelAndView model = null;
+		try {
+//			AccessToken accessToken = ((KeycloakPrincipal<?>) principal).getKeycloakSecurityContext().getToken();
+//			String preferredUsername = accessToken.getPreferredUsername();
+//			AccessToken.Access realmAccess = accessToken.getRealmAccess();
+//			Set<String> roles = realmAccess.getRoles();
+//			logger.info("user：{}, roles：{}", preferredUsername, roles);
+			
+			// make excel
+			excelService.makeExcel();
+			model = new ModelAndView("/success");
+			model.addObject("MSG", MessageKey.MSG002);
+		} catch (Exception e) {
+			logger.error("{testError}: ", e);
+			logger.error("{}: ", e);
+			model = new ModelAndView("/fail");
+			model.addObject("MSG", MessageKey.MSG003);
+			return model;
+		}
+		return model;
 	}
 }

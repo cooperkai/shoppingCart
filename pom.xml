@@ -63,6 +63,31 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
+        <dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi</artifactId>
+		    <version>4.1.0</version>
+		</dependency>
+		<!-- 加密演算法 -->
+<!-- 		<dependency> -->
+<!-- 		    <groupId>org.bouncycastle</groupId> -->
+<!-- 		    <artifactId>bcprov-jdk15on</artifactId> -->
+<!-- 		    <version>1.62</version> -->
+<!-- 		</dependency> -->
+		<dependency>
+		    <groupId>org.json</groupId>
+		    <artifactId>json</artifactId>
+		    <version>20180813</version>
+		</dependency>
+		<dependency>
+		    <groupId>commons-io</groupId>
+		    <artifactId>commons-io</artifactId>
+		    <version>2.6</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-lang3</artifactId>
+		    </dependency>
 	</dependencies>
 
 	<build>
