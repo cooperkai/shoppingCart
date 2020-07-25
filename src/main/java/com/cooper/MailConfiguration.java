@@ -26,7 +26,7 @@ public class MailConfiguration {
 	private String protocol;
 	
 	@Bean
-	public JavaMailSenderImpl javaMailSender() {
+	public JavaMailSenderImpl JavaMailSender() {
 		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 		mailSender.setHost(host);
 		mailSender.setUsername(userName);
