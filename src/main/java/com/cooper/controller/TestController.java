@@ -67,8 +67,7 @@ public class TestController {
 			model = new ModelAndView("/success");
 			model.addObject("MSG", MessageKey.MSG002);
 		} catch (Exception e) {
-			logger.error("{testError}: ", e);
-			logger.error("{}: ", e);
+			logger.error(e.getMessage(), e);
 			model = new ModelAndView("/fail");
 			model.addObject("MSG", MessageKey.MSG003);
 			return model;
