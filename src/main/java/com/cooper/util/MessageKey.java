@@ -1,6 +1,8 @@
 package com.cooper.util;
 
 public class MessageKey {
+	private MessageKey() {
+	}
 	
 	public static final String CODE001 = "001"; 
 	public static String MSG001 = "信件發送失敗"; 
